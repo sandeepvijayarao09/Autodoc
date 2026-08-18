@@ -1,0 +1,22 @@
+# Swift / SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# Release artifacts (built by ./release.sh)
+build/
+*.dmg
+*.icns
+*.iconset/
+*.zip
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+*.xcuserstate
+xcuserdata/
+
+# Local audit notes (not part of the release)
+RELEASE_CHECKLIST.md

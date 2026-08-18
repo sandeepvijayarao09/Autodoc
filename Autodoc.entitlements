@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Developer ID / Hardened Runtime build (not App Sandbox).
+         Screen Recording is a TCC privacy prompt, not an entitlement, so no
+         capture entitlement is required. Outbound localhost networking to
+         Ollama needs no entitlement outside the sandbox. This app therefore
+         ships a hardened runtime with NO security exceptions — the strictest,
+         cleanest posture Apple's notarization accepts. -->
+</dict>
+</plist>

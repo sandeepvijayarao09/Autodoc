@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>            <string>Autodoc</string>
+    <key>CFBundleDisplayName</key>     <string>Autodoc</string>
+    <key>CFBundleIdentifier</key>      <string>io.github.sandeepvijayarao09.Autodoc</string>
+    <key>CFBundleExecutable</key>      <string>Autodoc</string>
+    <key>CFBundlePackageType</key>     <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key> <string>6.0</string>
+    <key>CFBundleShortVersionString</key> <string>__VERSION__</string>
+    <key>CFBundleVersion</key>         <string>__BUILD__</string>
+    <key>CFBundleDevelopmentRegion</key> <string>en</string>
+    <key>CFBundleIconFile</key>        <string>Autodoc</string>
+    <key>CFBundleIconName</key>        <string>Autodoc</string>
+    <key>LSMinimumSystemVersion</key>  <string>14.0</string>
+    <key>LSApplicationCategoryType</key> <string>public.app-category.productivity</string>
+    <key>NSHighResolutionCapable</key> <true/>
+    <key>NSHumanReadableCopyright</key> <string>Copyright © 2026 Sandeep Vijayarao. MIT licensed.</string>
+    <!-- Menu-bar-only agent: no Dock icon. The Library opens as a normal
+         window on demand (see "Open Library…" in the menu). -->
+    <key>LSUIElement</key>            <true/>
+    <!-- Allow the local Ollama server over http (loopback only). -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key><true/>
+    </dict>
+</dict>
+</plist>

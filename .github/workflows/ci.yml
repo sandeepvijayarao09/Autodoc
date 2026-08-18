@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build & test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: swift --version
+
+      - name: Build (debug)
+        run: swift build
+
+      - name: Test
+        run: swift test
+
+      - name: Build (release)
+        run: swift build -c release
+
+      # The release pipeline must keep working, but notarization needs secrets,
+      # so CI only verifies the unsigned/ad-hoc path.
+      - name: Verify release pipeline
+        run: |
+          ./release.sh
+          test -f "build/Autodoc-$(tr -d ' \t\n\r' < VERSION).dmg"
+
+  lint:
+    name: Warnings are errors
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with warnings as errors
+        run: swift build -c release -Xswiftc -warnings-as-errors
