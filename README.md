@@ -1,5 +1,13 @@
 # Autodoc for Mac — native
 
+## In 30 seconds
+- **What it is:** A Mac menu-bar app that notes what you work on and writes a running log per project.
+- **Why it matters:** Screen capture, AI processing and storage all stay on your Mac; raw records are encrypted and credentials are scrubbed before storage.
+- **Key result:** A local Gemma vision model (via Ollama on `localhost`) reads each screen capture; 126 tests run with `swift test`. Status: not yet notarized by Apple.
+- **What I did:** Solo project: rewrote my Python CLI prototype as a native Swift app.
+- **Built with:** Swift 6, SwiftUI (`MenuBarExtra`), ScreenCaptureKit, CryptoKit + Keychain, Ollama, Gemma 4 E4B.
+- **Try it:** With Ollama running and `gemma4:e4b` pulled, run `./make-signing-cert.sh`, `./build.sh`, then `open build/Autodoc.app`.
+
 The Apple-standard rewrite of Autodoc: a native **Swift 6 / SwiftUI menu-bar app**
 that logs what you do across your projects, entirely on-device, and turns it into
 a per-project running log with a local Gemma vision model.
